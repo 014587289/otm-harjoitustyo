@@ -1,0 +1,75 @@
+ git log --stat|cat
+commit f02b7c1ae8f75d681c24e9c2ebf64598d469bac4
+Author: Mikaelny <nystrommikael@hotmail.com>
+Date:   Thu Mar 15 13:34:32 2018 +0200
+
+    asdasd
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f43ee0ad447bb5e6d1fef76f25a458d3bc72f51e
+Author: Mikaelny <nystrommikael@hotmail.com>
+Date:   Thu Mar 15 13:31:39 2018 +0200
+
+    vitustikaikkeesaatana
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 7c0b2df733cb1088acdb4a887a48aef2c6dd4ccf
+Author: Mikaelny <nystrommikael@hotmail.com>
+Date:   Thu Mar 15 13:25:02 2018 +0200
+
+    uudelleen nimetty
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f8dce77a936c23e3998ea6bd8db6698af3b48b04
+Author: Mikaelny <nystrommikael@hotmail.com>
+Date:   Thu Mar 15 13:21:26 2018 +0200
+
+    poistettu toinen
+
+ toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 2f511ac4610ad49092e47673f1776934d6ef1d2e
+Author: Mikaelny <nystrommikael@hotmail.com>
+Date:   Thu Mar 15 13:19:43 2018 +0200
+
+    jokin lisätty
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 02c39e35c7ec47cc9c86285d431037b63b1cb027
+Author: Mikaelny <nystrommikael@hotmail.com>
+Date:   Thu Mar 15 13:18:45 2018 +0200
+
+    kolmannen lisäys
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6338b4e52778a42f3b73cbfb759755e64d7ae4e8
+Author: Mikaelny <nystrommikael@hotmail.com>
+Date:   Thu Mar 15 13:12:58 2018 +0200
+
+    muutos ja lisäys
+
+ toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 62f8095caa6357ae0f47b98cac401df73c1aa139
+Author: Mikaelny <nystrommikael@hotmail.com>
+Date:   Thu Mar 15 13:09:12 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
