@@ -1,3 +1,5 @@
 # Otsikko
-**T‰m‰ teksti on lihavoitu**
-_Ja t‰m‰ kursivoitu_
+**T√§m√§ teksti on lihavoitu**
+_Ja t√§m√§ kursivoitu_
+
+[komentorivi](https://github.com/014587289/otm-harjoitustyo/blob/master/laskarit/komentorivi.txt)
