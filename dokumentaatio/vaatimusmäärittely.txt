@@ -1,0 +1,5 @@
+#Vaatimusmäärittely
+
+#Sovelluksen kuvaus
+
+Harjoitustyön sovelluksena on laskin, jolla käyttäjä voi tehdä perinteisestä käsilaskimesta tuttuja laskutoimituksia
