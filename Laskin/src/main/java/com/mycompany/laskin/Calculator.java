@@ -40,7 +40,7 @@ public class Calculator {
                 operator.setLastResult(Double.parseDouble(exitOrNumber));
             }
             catch(NumberFormatException ex) {
-                System.out.println("Invalid input, closing calculatore");
+                System.out.println("Invalid input, closing calculator");
                 break;
             }
             
