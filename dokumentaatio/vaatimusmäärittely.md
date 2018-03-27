@@ -9,7 +9,6 @@ Harjoitustyön sovelluksena on laskin, jolla käyttäjä voi tehdä perinteisest
 -Yhteen-, vähennys-, kerto- ja jakolaskut
 -Trigonometriset funktiot
 -Neliöjuuret ja potenssit
--Laskujärjestyssopimusten noudattaminen
 
 **Käyttöliittymä**
 
