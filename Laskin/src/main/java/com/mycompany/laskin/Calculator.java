@@ -13,21 +13,37 @@ import java.util.Scanner;
  */
 public class Calculator {
     
-    private int calculations;
     //private file saveFile;
     private Scanner scanner;
-    private Operator operator;
+    public Operator operator;
     
     public Calculator() {
-        this.calculations = 0;
         //this.saveFile = ...;
         this.scanner = new Scanner(System.in);
         this.operator = new Operator();
         
     }
+
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
+    public Operator getOperator() {
+        return operator;
+    }
+
+    public void setOperator(Operator operator) {
+        this.operator = operator;
+    }
+    
+    
     
     public void startCalculator() {
-        while(true) {
+        while (true) {
             System.out.println("Enter the first number, or enter 'e' if you want to exit.");
             try {
                 String exitOrNumber = scanner.nextLine();
@@ -38,18 +54,17 @@ public class Calculator {
                 double x = Double.parseDouble(exitOrNumber);
                 operator.setLastInput(Double.parseDouble(exitOrNumber));
                 operator.setLastResult(Double.parseDouble(exitOrNumber));
-            }
-            catch(NumberFormatException ex) {
+            } catch (NumberFormatException ex) {
                 System.out.println("Invalid input, closing calculator");
                 break;
             }
             
             double firstInput = operator.getLastInput();
-            System.out.println("Enter operation (+, -, /, *, =)");
+            System.out.println("Enter operation (+, -, /, *, =, ^)");
             OUTER:
             while (true) {
                 String operation = scanner.nextLine();
-                if (!(operation.equals("+")) && !(operation.equals("-")) && !(operation.equals("/")) && !(operation.equals("*")) && !(operation.equals("="))) {
+                if (!(operation.equals("+")) && !(operation.equals("-")) && !(operation.equals("/")) && !(operation.equals("*")) && !(operation.equals("=")) && !(operation.equals("^"))) {
                     System.out.println("Unsupported operation, try again.");
                 } else {
                     System.out.println("Enter the second number.");
@@ -76,6 +91,10 @@ public class Calculator {
                         case "=":
                             double equ = operator.equals();
                             System.out.println(equ);
+                            break OUTER;
+                        case "^":
+                            double power = operator.power(operator.getLastResult(), secondInput);
+                            System.out.println(power);
                             break OUTER;
                         default:
                             break;

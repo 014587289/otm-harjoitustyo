@@ -46,7 +46,12 @@ public class Operator {
         lastResult = firstNumber * secondNumber;
         return lastResult;
     }
+    public double power(double firstNumber, double secondNumber) {
+        lastResult = Math.pow(firstNumber, secondNumber);
+        return lastResult;
+    }
     public double equals() {
         return lastResult;
     }
+    
 }
