@@ -22,7 +22,9 @@ public class CalculatorTest {
     
     public CalculatorTest() {
     }
+    Operator operator;
     Calculator calculator;
+    Scanner scanner;
     @BeforeClass
     public static void setUpClass() {
     }
@@ -34,6 +36,8 @@ public class CalculatorTest {
     @Before
     public void setUp() {
         calculator = new Calculator();
+        operator = new Operator();
+        calculator.setScanner(scanner);
     }
     
     @After
@@ -54,5 +58,8 @@ public class CalculatorTest {
         calculator.setOperator(operator);
         assertEquals(operator, calculator.getOperator());
     }
-    
+    @Test
+    public void operatorNotNull() {
+        assertNotNull(calculator.operator);
+    }   
 }

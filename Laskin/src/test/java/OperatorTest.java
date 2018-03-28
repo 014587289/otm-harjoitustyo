@@ -76,7 +76,7 @@ public class OperatorTest {
     @Test
     public void equalWorks() {
         operator.sum(3, 4);
-        assertEquals(Double.doubleToLongBits(7), Double.doubleToLongBits(operator.getLastResult()));
+        assertEquals(Double.doubleToLongBits(7), Double.doubleToLongBits(operator.equals()));
     }
     @Test
     public void powerWorks() {

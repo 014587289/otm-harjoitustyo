@@ -5,11 +5,21 @@ public class Operator {
     
     private double lastInput;
     private double lastResult;
+    private String lastOperation;
     
     public Operator() {
         this.lastInput = 0;
         this.lastResult = 0;
+        this.lastOperation = "";
         
+    }
+
+    public String getLastOperation() {
+        return lastOperation;
+    }
+
+    public void setLastOperation(String lastOperation) {
+        this.lastOperation = lastOperation;
     }
 
     public double getLastInput() {
@@ -51,6 +61,10 @@ public class Operator {
         return lastResult;
     }
     public double equals() {
+        return lastResult;
+    }
+    public double sqrt(double number) {
+        lastResult = Math.sqrt(number);
         return lastResult;
     }
     
