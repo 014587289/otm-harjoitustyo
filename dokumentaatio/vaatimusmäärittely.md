@@ -12,7 +12,7 @@ Harjoitustyön sovelluksena on laskin, jolla käyttäjä voi tehdä perinteisest
 
 **Käyttöliittymä**
 
--Tavanomainen tietokoneella käytettävä käyttöliittymä, joka sallii klikkaukset sekä näppäimistö-inputin
+Tekstikäyttöliittymä, jossa valitaan operaatio ja tarvittavat luvut.
 
 **Jatkokehitysideoita**
 
