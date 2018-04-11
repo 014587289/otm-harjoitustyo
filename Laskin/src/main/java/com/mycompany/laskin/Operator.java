@@ -67,5 +67,33 @@ public class Operator {
         lastResult = Math.sqrt(number);
         return lastResult;
     }
+    public double sin(double number) {
+        lastResult = Math.sin(number);
+        return lastResult;
+    }
+    public double cos(double number) {
+        lastResult = Math.cos(number);
+        return lastResult;
+    }
+    public double tan(double number) {
+        lastResult = Math.tan(number);
+        return lastResult;
+    }
+    public double arcsin(double number) {
+        lastResult = Math.asin(number);
+        return lastResult;
+    }
+    public double arccos(double number) {
+        lastResult = Math.acos(number);
+        return lastResult;
+    }
+    public double arctan(double number) {
+        lastResult = Math.atan(number);
+        return lastResult;
+    }
+    public double root(double number) {
+        lastResult = Math.r(number);
+        return lastResult;
+    }
     
 }
