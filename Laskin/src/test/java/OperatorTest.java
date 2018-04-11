@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-import com.mycompany.laskin.Calculator;
-import com.mycompany.laskin.Operator;
+import calculatorapp.gui.Calculator;
+import calculatorapp.logics.Operator;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -41,6 +41,7 @@ public class OperatorTest {
     public void tearDown() {
     }
     
+    
     @Test
     public void lastInputZero() {
         double input = operator.getLastInput();
@@ -51,14 +52,19 @@ public class OperatorTest {
         assertEquals(0, Double.doubleToLongBits(result));
     }
     @Test
+    public void operationSetterWorks() {
+        operator.setLastOperation("+");
+        assertEquals("+", operator.getLastOperation());
+    }
+    @Test
     public void resultSetterWorks() {
         operator.setLastResult(3);
         assertEquals(Double.doubleToLongBits(3), Double.doubleToLongBits(operator.getLastResult()));
     }
     @Test
     public void inputSetterWorks() {
-        operator.setLastInput(3);
-        assertEquals(Double.doubleToLongBits(3), Double.doubleToLongBits(operator.getLastInput()));
+        operator.setLastInput(4);
+        assertEquals(Double.doubleToLongBits(4), Double.doubleToLongBits(operator.getLastInput()));
     }
     
     @Test
@@ -83,5 +89,41 @@ public class OperatorTest {
         operator.power(3, 2);
         assertEquals(Double.doubleToLongBits(9), Double.doubleToLongBits(operator.getLastResult()));
     }
+    @Test
+    public void sinWorks() {
+        operator.sin(0);
+        assertEquals(Double.doubleToLongBits(0), Double.doubleToLongBits(operator.getLastResult()));
+    }
+    @Test
+    public void cosWorks() {
+        operator.cos(0);
+        assertEquals(Double.doubleToLongBits(1), Double.doubleToLongBits(operator.getLastResult()));
+    }
+    @Test
+    public void tanWorks() {
+        operator.tan(0);
+        assertEquals(Double.doubleToLongBits(0), Double.doubleToLongBits(operator.getLastResult()));
+    }
+    @Test
+    public void sqrtWorks() {
+        operator.sqrt(4);
+        assertEquals(Double.doubleToLongBits(2), Double.doubleToLongBits(operator.getLastResult()));
+    }
+    @Test
+    public void asinWorks() {
+        operator.arcsin(0);
+        assertEquals(Double.doubleToLongBits(0), Double.doubleToLongBits(operator.getLastResult()));
+    }
+    @Test
+    public void acosWorks() {
+        operator.arccos(1);
+        assertEquals(Double.doubleToLongBits(0), Double.doubleToLongBits(operator.getLastResult()));
+    }
+    @Test
+    public void atanWorks() {
+        operator.arctan(0);
+        assertEquals(Double.doubleToLongBits(0), Double.doubleToLongBits(operator.getLastResult()));
+    }
+    
 
 }

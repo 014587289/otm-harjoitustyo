@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.laskin;
+package calculatorapp.gui;
 
+import calculatorapp.logics.Operator;
 import java.util.Scanner;
 
 /**
@@ -62,7 +63,7 @@ public class Calculator {
             //Peruslaskutoimitusket
             
             
-            if(command.equals("1")) {
+            if (command.equals("1")) {
                 System.out.println("Enter operation (+, -, /, *)");
                 
                 while (true) {
@@ -72,7 +73,7 @@ public class Calculator {
                     } else {
                         this.operator.setLastOperation(operation);
                         break;
-                      }
+                    }
                 }
                 System.out.println("Enter first number or enter 'ans' to use last result.");
                 String input = scanner.nextLine();
@@ -81,8 +82,8 @@ public class Calculator {
                     firstInput = operator.getLastResult();
                 } else {
                     try {
-                      firstInput = Double.parseDouble(input);
-                      operator.setLastInput(firstInput);
+                        firstInput = Double.parseDouble(input);
+                        operator.setLastInput(firstInput);
                       
                         
                     } catch (NumberFormatException ex) {
@@ -98,8 +99,8 @@ public class Calculator {
                     secondInput = operator.getLastResult();
                 } else {
                     try {
-                      secondInput = Double.parseDouble(input);
-                      operator.setLastInput(secondInput);
+                        secondInput = Double.parseDouble(input);
+                        operator.setLastInput(secondInput);
                   
                         
                     } catch (NumberFormatException ex) {
@@ -129,7 +130,7 @@ public class Calculator {
             //Trigonometriset funktiot
             
             
-            if(command.equals("2")) {
+            if (command.equals("2")) {
                 System.out.println("Enter operation (sin, cos, tan)");
                 
                 while (true) {
@@ -148,8 +149,8 @@ public class Calculator {
                     firstInput = operator.getLastResult();
                 } else {
                     try {
-                      firstInput = Double.parseDouble(input);
-                      operator.setLastInput(firstInput);
+                        firstInput = Double.parseDouble(input);
+                        operator.setLastInput(firstInput);
                           
                     } catch (NumberFormatException ex) {
                         System.out.println("Invalid input, closing calculator");
@@ -172,7 +173,7 @@ public class Calculator {
             
             //Juuret
             
-            if(command.equals("3")) {
+            if (command.equals("3")) {
 
                 System.out.println("Enter a number you'd like to raise to a power, or enter 'ans' to use last result.");
                 String input = scanner.nextLine();
@@ -181,8 +182,8 @@ public class Calculator {
                     firstInput = operator.getLastResult();
                 } else {
                     try {
-                      firstInput = Double.parseDouble(input);
-                      operator.setLastInput(firstInput);
+                        firstInput = Double.parseDouble(input);
+                        operator.setLastInput(firstInput);
                       
                         
                     } catch (NumberFormatException ex) {
@@ -198,8 +199,8 @@ public class Calculator {
                     secondInput = operator.getLastResult();
                 } else {
                     try {
-                      secondInput = Double.parseDouble(input);
-                      operator.setLastInput(secondInput);
+                        secondInput = Double.parseDouble(input);
+                        operator.setLastInput(secondInput);
                   
                         
                     } catch (NumberFormatException ex) {
@@ -210,7 +211,7 @@ public class Calculator {
                 operator.power(firstInput, secondInput);
                 System.out.println(firstInput + " to the power of " + secondInput + " = " + operator.getLastResult());  
             }
-            if(command.equals("e")) {
+            if (command.equals("e")) {
                 System.out.println("Thank you for using the calculator.");
                 break;
             }

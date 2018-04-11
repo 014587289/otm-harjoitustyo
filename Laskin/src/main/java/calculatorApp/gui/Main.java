@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.laskin;
+package calculatorapp.gui;
+
+import calculatorapp.gui.Calculator;
 
 /**
  *

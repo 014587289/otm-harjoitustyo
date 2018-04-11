@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-import com.mycompany.laskin.Calculator;
-import com.mycompany.laskin.Operator;
+import calculatorapp.gui.Calculator;
+import calculatorapp.logics.Operator;
 import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
