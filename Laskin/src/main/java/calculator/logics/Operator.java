@@ -1,5 +1,5 @@
 
-package calculatorapp.logics;
+package calculator.logics;
 
 public class Operator {
     

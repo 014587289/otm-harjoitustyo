@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package calculatorapp.gui;
+package calculator.gui;
 
-import calculatorapp.gui.Calculator;
+import calculator.gui.Calculator;
 
 /**
  *

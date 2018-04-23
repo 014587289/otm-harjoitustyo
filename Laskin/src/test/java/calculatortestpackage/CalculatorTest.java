@@ -1,11 +1,13 @@
+package calculatortestpackage;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import calculatorapp.gui.Calculator;
-import calculatorapp.logics.Operator;
+import calculator.gui.Calculator;
+import calculator.logics.Operator;
 import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
