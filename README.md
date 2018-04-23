@@ -12,7 +12,11 @@ Sovelluksen tarkoituksena on toimia yksinkertaisena tekstikäyttöliittymällä 
 
 ## Releaset
 
-[Viikko 5](https://github.com/014587289/otm-harjoitustyo/releases/tag/0.1)
+[Viikko 5](https://github.com/014587289/otm-harjoitustyo/releases/tag/0.1)'
+
+## Käyttöohjeet
+
+Ohjelmaa käytetty vain Netbeansin kautta.
 
 
 
