@@ -1,7 +1,15 @@
 ﻿# Laskin-app
 
-[Linkki dokumentaation alustavaan vaatimusmäärittelyyn](https://github.com/014587289/otm-harjoitustyo/blob/master/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
+## Dokumentaatio
 
-[Linkki tuntikirjanpitoon](https://github.com/014587289/otm-harjoitustyo/blob/master/dokumentaatio/Tuntikirjanpito.md)
+[Alustava vaatimusmäärittely](https://github.com/014587289/otm-harjoitustyo/blob/master/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
+[tuntikirjanpito](https://github.com/014587289/otm-harjoitustyo/blob/master/dokumentaatio/Tuntikirjanpito.md)
+[Alustava luokkakaavio](https://github.com/014587289/otm-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-[Linkki alustavaan luokkakaavioon](https://github.com/014587289/otm-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+## Releaset
+
+
+
+
+
+
