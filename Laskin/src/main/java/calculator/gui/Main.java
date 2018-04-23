@@ -5,8 +5,6 @@
  */
 package calculator.gui;
 
-import calculator.gui.Calculator;
-
 /**
  *
  * @author Kakshoo
@@ -15,6 +13,7 @@ public class Main {
     
     
     public static void main(String[] args) {
+        
         Calculator calculator = new Calculator();
         calculator.startCalculator();
     }

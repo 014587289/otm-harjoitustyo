@@ -8,7 +8,7 @@
 | 7.4.  |  3h   | Koodin runko rakennettu uudelleen, vanha versio kommentoitu pois. Toiminnallisuus on nyt pienempi, mutta helpompi laajentaa |
 | 11.4. |  3h   | Trigonometriset funktiot sekä potenssit lisätty, käyttöliittymä korjattu. |
 | 11.4. |  2h   | Testikattavuutta lisätty |
-|   |     |  |
+| 23.4. |  4h   | Paketointi korjattu, README muokattu, plugini lisätty, lisätty toiminnallisuutta (tiedoston kirjoitus) |
 |   |     |  |
 |   |     |  |
 |   |     |  |

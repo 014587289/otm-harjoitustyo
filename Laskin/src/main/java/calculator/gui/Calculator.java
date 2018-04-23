@@ -6,6 +6,13 @@
 package calculator.gui;
 
 import calculator.logics.Operator;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -48,6 +55,7 @@ public class Calculator {
         //Käynnistys
         
         System.out.println("Welcome to Calculator.app!");
+        String output = "";
         double firstInput = 0;
         double secondInput = 0;
         while (true) {
@@ -55,8 +63,9 @@ public class Calculator {
             System.out.println("1: Basic operations");
             System.out.println("2: Trigonometric operations");
             System.out.println("3: Powers");
+            System.out.println("4: Print out your calculation history");
             System.out.println("e: Exit");
-            
+            System.out.println("");
             String command = scanner.nextLine();
             
             
@@ -64,6 +73,7 @@ public class Calculator {
             
             
             if (command.equals("1")) {
+                
                 System.out.println("Enter operation (+, -, /, *)");
                 
                 while (true) {
@@ -110,21 +120,33 @@ public class Calculator {
                 }
                 if (operator.getLastOperation().equals("+")) {
                     operator.sum(firstInput, secondInput);
-                    System.out.println(firstInput + "+" + secondInput + " = " + operator.getLastResult());
+                    output = firstInput + "+" + secondInput + " = " + operator.getLastResult();
                 }
                 if (operator.getLastOperation().equals("-")) {
                     operator.substraction(firstInput, secondInput);
-                    System.out.println(firstInput + "-" + secondInput + " = " + operator.getLastResult());
+                    output = firstInput + "-" + secondInput + " = " + operator.getLastResult();
                 }
                 if (operator.getLastOperation().equals("/")) {
                     operator.division(firstInput, secondInput);
-                    System.out.println(firstInput + "/" + secondInput + " = " + operator.getLastResult());
+                    output = firstInput + "/" + secondInput + " = " + operator.getLastResult();
                 }
                 if (operator.getLastOperation().equals("*")) {
                     operator.multiplication(firstInput, secondInput);
-                    System.out.println(firstInput + "*" + secondInput + " = " + operator.getLastResult());
-                }  
+                    output = firstInput + "*" + secondInput + " = " + operator.getLastResult();
+                }
+                System.out.println(output);
+                System.out.println("");
+                try (FileWriter fw = new FileWriter("operations.txt", true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                PrintWriter out = new PrintWriter(bw)) {
+                
+                    out.println(output);
+                } catch (IOException e) {
+                    System.out.println("The application encountered an error");
+                }
             }
+            
+            
             
             
             //Trigonometriset funktiot
@@ -159,15 +181,25 @@ public class Calculator {
                 }
                 if (operator.getLastOperation().equals("sin")) {
                     operator.sin(firstInput);
-                    System.out.println("sin(" + firstInput + ") = " +  operator.getLastResult());
+                    output = "sin(" + firstInput + ") = " +  operator.getLastResult();
                 }
                 if (operator.getLastOperation().equals("cos")) {
                     operator.cos(firstInput);
-                    System.out.println("cos(" + firstInput + ") = " +  operator.getLastResult());
+                    output = "cos(" + firstInput + ") = " +  operator.getLastResult();
                 }
                 if (operator.getLastOperation().equals("tan")) {
                     operator.tan(firstInput);
-                    System.out.println("tan(" + firstInput + ") = " +  operator.getLastResult());
+                    output = "tan(" + firstInput + ") = " +  operator.getLastResult();
+                }
+                System.out.println(output);
+                System.out.println("");
+                try (FileWriter fw = new FileWriter("operations.txt", true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                PrintWriter out = new PrintWriter(bw)) {
+                
+                    out.println(output);
+                } catch (IOException e) {
+                    System.out.println("The application encountered an error");
                 }
             }
             
@@ -209,8 +241,41 @@ public class Calculator {
                     }
                 }
                 operator.power(firstInput, secondInput);
-                System.out.println(firstInput + " to the power of " + secondInput + " = " + operator.getLastResult());  
+                output = firstInput + " to the power of " + secondInput + " = " + operator.getLastResult();
+                System.out.println(output);
+                System.out.println("");
+                try (FileWriter fw = new FileWriter("operations.txt", true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                PrintWriter out = new PrintWriter(bw)) {
+                
+                    out.println(output);
+                } catch (IOException e) {
+                    System.out.println("The application encountered an error");
+                }
             }
+            
+            if (command.equals("4")) {
+                
+                try (FileWriter fw = new FileWriter("operations.txt", true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                PrintWriter out = new PrintWriter(bw)) {
+                
+                } catch (IOException e) {
+                    System.out.println("The application encountered an error");
+                }
+                
+                ArrayList<String> lines = new ArrayList<>();
+
+                try {
+                    Files.lines(Paths.get("operations.txt")).forEach(line -> lines.add(line));
+                } catch (Exception e) {
+                    System.out.println("The application encountered an error");
+                }
+                
+                lines.stream().forEach(t -> System.out.println(t));
+                System.out.println("");
+            }
+            
             if (command.equals("e")) {
                 System.out.println("Thank you for using the calculator.");
                 break;

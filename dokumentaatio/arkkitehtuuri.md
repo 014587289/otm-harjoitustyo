@@ -1,1 +1,6 @@
 ![Luokkakaavio](http://yuml.me/446352b4.png)
+
+![Sekvenssikaavio laskimen perustoiminnallisuudesta](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=
+VGl0bGUgQ2FsY3VsYXRvciAtIHN1bW1hbiBsYXNrZW1pbmVuIGFuc2lhIGvDpHl0dMOkZW4KCk1haW4tPgAtCjogY2FsYyA9IG5ldwBDCygpABMXLnN0YXJ0ABwNAHoKLT5PcG
+VyAFEGb3ByAE8HAAwIABwPU2Nhbm5lcjogc2NuAHkHAAwHABEYZmlyc3RJbnB1dCA9IHNjbi5uZXh0TGluZSgpICgiMyIASBhlY29uZAAfGTUiKQoAgS0Xc3VtKABrCiwAPgspCgCBYggtAIJADjgAMB
+thbnMsIDEwKTsAghkaLmdldExhc3RSZXN1bHQoADI1OABgBQCBCRgxOAoKCgo&s=napkin)
