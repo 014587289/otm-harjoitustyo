@@ -8,15 +8,12 @@ Sovelluksen tarkoituksena on toimia yksinkertaisena tekstikäyttöliittymällä 
 
 [Tuntikirjanpito](https://github.com/014587289/otm-harjoitustyo/blob/master/dokumentaatio/Tuntikirjanpito.md)
 
-[Arkkitehtuuri](https://github.com/014587289/otm-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuurikuvaus](https://github.com/014587289/otm-harjoitustyo/blob/master/dokumentaatio/Arkkitehtuurikuvaus.md)
 
 ## Releaset
 
 [Viikko 5](https://github.com/014587289/otm-harjoitustyo/releases/tag/0.1)
 
-## Käyttöohjeet
-
-Ohjelma
 
 
 
