@@ -6,7 +6,7 @@ package calculatortestpackage;
  * and open the template in the editor.
  */
 
-import calculator.gui.Calculator;
+import calculator.ui.Calculator;
 import calculator.logics.Operator;
 import org.junit.After;
 import org.junit.AfterClass;

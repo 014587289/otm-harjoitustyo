@@ -9,8 +9,8 @@
 | 11.4. |  3h   | Trigonometriset funktiot sekä potenssit lisätty, käyttöliittymä korjattu. |
 | 11.4. |  2h   | Testikattavuutta lisätty |
 | 23.4. |  4h   | Paketointi korjattu, README muokattu, plugini lisätty, lisätty toiminnallisuutta (tiedoston kirjoitus) |
-|YHTEENSÄ| 20h  |  |
-|   	|     	|  |
+| 30.4. |  4h   | Toiminnallisuutta laajennettu, javadoc aloitettu, paketoinnin ja joidenkin muuttujien nimiä siistitty |
+|YHTEENSÄ|  24h |  |
 |  	|     	|  |
 |   	|     	|  |
 |   	|     	|  | 

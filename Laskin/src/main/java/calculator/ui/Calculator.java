@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package calculator.gui;
+
+package calculator.ui;
 
 import calculator.logics.Operator;
 import java.io.BufferedWriter;
@@ -14,10 +10,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 /**
- *
- * @author Kakshoo
+ * Luokka toimii sovelluksen moottorina, ja päätoiminnallisuus sekä käyttöliittymä rakentuvat täällä.
  */
 public class Calculator {
     
@@ -49,7 +43,9 @@ public class Calculator {
     }
     
     
-    
+    /**
+    * Metodi käynnistää sovelluksen.
+    */
     public void startCalculator() {
         
         //Käynnistys
@@ -64,12 +60,10 @@ public class Calculator {
             System.out.println("2: Trigonometric operations");
             System.out.println("3: Powers");
             System.out.println("4: Print out your calculation history");
+            System.out.println("5: Clear your calculation history");
             System.out.println("e: Exit");
             System.out.println("");
             String command = scanner.nextLine();
-            
-            
-            //Peruslaskutoimitusket
             
             
             if (command.equals("1")) {
@@ -147,11 +141,6 @@ public class Calculator {
             }
             
             
-            
-            
-            //Trigonometriset funktiot
-            
-            
             if (command.equals("2")) {
                 System.out.println("Enter operation (sin, cos, tan)");
                 
@@ -202,9 +191,7 @@ public class Calculator {
                     System.out.println("The application encountered an error");
                 }
             }
-            
-            //Juuret
-            
+
             if (command.equals("3")) {
 
                 System.out.println("Enter a number you'd like to raise to a power, or enter 'ans' to use last result.");
@@ -261,7 +248,7 @@ public class Calculator {
                 PrintWriter out = new PrintWriter(bw)) {
                 
                 } catch (IOException e) {
-                    System.out.println("The application encountered an error");
+                    System.out.println("ERROR WHILE CREATING FILE");
                 }
                 
                 ArrayList<String> lines = new ArrayList<>();
@@ -269,11 +256,45 @@ public class Calculator {
                 try {
                     Files.lines(Paths.get("operations.txt")).forEach(line -> lines.add(line));
                 } catch (Exception e) {
-                    System.out.println("The application encountered an error");
+                    System.out.println("ERROR WHILE READING FILE");
                 }
-                
-                lines.stream().forEach(t -> System.out.println(t));
+                int linesMax = lines.size();
+                int linesInt = 0;
+                System.out.println("How many lines would you like to print? The maximum is " + linesMax + ". Press enter for full history.");
+                String linesInput = scanner.nextLine();
+                if (linesInput.equals("")) {
+                    lines.stream().forEach(t -> System.out.println(t));
+                } else {
+                    try {
+                        linesInt = Integer.parseInt(linesInput);
+                    } catch (NumberFormatException ex) {
+                        System.out.println("Invalid input, closing calculator");
+                        break;
+                    }
+                    if (linesInt > linesMax) {
+                        System.out.println("Invalid input, closing calculator");
+                        break;
+                    }
+                    int i = 0;
+                    while (i < linesInt) {
+                        System.out.println(lines.get(i));
+                        i++;
+                    }
+                }
                 System.out.println("");
+            }
+            
+            if (command.equals("5")) {
+                if (Paths.get("Operations.txt") != null) {
+                    try {
+                        PrintWriter writer = new PrintWriter("Operations.txt");
+                        writer.print("");
+                        writer.close();
+                    } catch (Exception e) {
+                        System.out.println("The application encountered an error");
+                    }
+                }
+                System.out.println("Your calculation history has been cleared.");
             }
             
             if (command.equals("e")) {
@@ -283,94 +304,3 @@ public class Calculator {
         }
     }
 }
-
-
-
-                        
-                        
-                        
-                        
-                        
-                        //try {
-//                String exitOrNumber = scanner.nextLine();
-//                if (exitOrNumber.equals("e")) {
-//                    System.out.println("Thank you for using the calculator.");
-//                    break;
-//                }
-//                double x = Double.parseDouble(exitOrNumber);
-//                operator.setLastInput(Double.parseDouble(exitOrNumber));
-//                operator.setLastResult(Double.parseDouble(exitOrNumber));
-//            } catch (NumberFormatException ex) {
-//                System.out.println("Invalid input, closing calculator");
-//                break;
-//            }
-
-                
-
-                
-           
-//            double firstInput = operator.getLastInput();
-//            
-//            System.out.println("Enter operation (+, -, /, *)");
-//            OUTER:
-//            while (true) {
-//                String operation = scanner.nextLine();
-//                if (operation.equals("sqrt")) {
-//                    double sqrt = operator.sqrt(operator.getLastResult());
-//                    System.out.println(sqrt);
-//                    break;
-//                    
-//                }
-//                if (!(operation.equals("+")) && !(operation.equals("-")) && !(operation.equals("/")) && !(operation.equals("*")) && !(operation.equals("=")) && !(operation.equals("^"))) {
-//                    System.out.println("Unsupported operation, try again.");
-//                } else {
-//                    System.out.println("Enter the second number.");
-//                    operator.setLastInput(Double.parseDouble(scanner.nextLine()));
-//                    double secondInput = operator.getLastInput();
-//                
-//                    switch (operation) {
-//                        case "+":
-//                            double sum = operator.sum(operator.getLastResult(), secondInput);
-//                            System.out.println(sum);
-//                            break OUTER;
-//                        case "-":
-//                            double subs = operator.substraction(operator.getLastResult(), secondInput);
-//                            System.out.println(subs);
-//                            break OUTER;
-//                        case "/":
-//                            double divi = operator.division(operator.getLastResult(), secondInput);
-//                            System.out.println(divi);
-//                            break OUTER;
-//                        case "*":
-//                            double multi = operator.multiplication(operator.getLastResult(), secondInput);
-//                            System.out.println(multi);
-//                            break OUTER;
-//                        case "=":
-//                            double equ = operator.equals();
-//                            System.out.println(equ);
-//                            break OUTER;
-//                        case "^":
-//                            double power = operator.power(operator.getLastResult(), secondInput);
-//                            System.out.println(power);
-//                            break OUTER;
-//                        default:
-//                            break;
-//                    }
-//                }
-//            }
-//        }
-//    }   
-
-//try {
-//                String exitOrNumber = scanner.nextLine();
-//                if (exitOrNumber.equals("e")) {
-//                    System.out.println("Thank you for using the calculator.");
-//                    break;
-//                }
-//                double x = Double.parseDouble(exitOrNumber);
-//                operator.setLastInput(Double.parseDouble(exitOrNumber));
-//                operator.setLastResult(Double.parseDouble(exitOrNumber));
-//            } catch (NumberFormatException ex) {
-//                System.out.println("Invalid input, closing calculator");
-//                break;
-//            }

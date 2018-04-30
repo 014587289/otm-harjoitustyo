@@ -1,6 +1,8 @@
 
 package calculator.logics;
-
+/**
+ * Luokka tarjoaa metodeja laskutoimitusten tekemiseen sekä inputtejen ja outputtejen säilömiseen.
+ */
 public class Operator {
     
     private double lastInput;
@@ -39,50 +41,96 @@ public class Operator {
     }
     
     
-    
+    /**
+    * Summaa parametreina annetut luvut ja tallettaa tuloksen myöhempää käyttöä varten.
+    * @param firstNumber käyttäjän antama syöte
+    * @param secondNumber käyttäjän antama syöte
+    * @return tulos
+    */
     public double sum(double firstNumber, double secondNumber) {
         lastInput = secondNumber;
         lastResult = (firstNumber + secondNumber);
         return lastResult;
     }
+    /**
+    * Vähentää parametreina annetut luvut toisistaan ja tallettaa tuloksen myöhempää käyttöä varten.
+    * @param firstNumber käyttäjän antama syöte
+    * @param secondNumber käyttäjän antama syöte
+    * @return tulos
+    */
     public double substraction(double firstNumber, double secondNumber) {
         lastInput = secondNumber;
         lastResult = firstNumber - secondNumber;
         return lastResult;
     }
+    /**
+    * Jakaa parametreina annetun luvun toisella luvulla ja tallettaa tuloksen myöhempää käyttöä varten.
+    * @param firstNumber käyttäjän antama syöte 
+    * @param secondNumber käyttäjän antama syöte
+    * @return tulos
+    */
     public double division(double firstNumber, double secondNumber) {
         lastInput = secondNumber;
         lastResult = firstNumber / secondNumber;
         return lastResult;
     }
+    /**
+    * Kertoo parametreina annetut luvut keskenään ja tallettaa tuloksen myöhempää käyttöä varten.
+    * @param firstNumber käyttäjän antama syöte
+    * @param secondNumber käyttäjän antama syöte
+    * @return tulos
+    */
     public double multiplication(double firstNumber, double secondNumber) {
         lastInput = secondNumber;
         lastResult = firstNumber * secondNumber;
         return lastResult;
     }
+    /**
+    * Korottaa parametrina annetun luvun potenssiin ja tallettaa tuloksen myöhempää käyttöä varten.
+    * @param firstNumber käyttäjän antama syöte
+    * @param secondNumber käyttäjän antama syöte
+    * @return tulos
+    */
     public double power(double firstNumber, double secondNumber) {
         lastInput = secondNumber;
         lastResult = Math.pow(firstNumber, secondNumber);
         return lastResult;
     }
-    public double equals() {
-        return lastResult;
-    }
+    /**
+    * Laskee annetun luvun neliöjuuren ja tallettaa tuloksen myöhempää käyttöä varten.
+    * @param number käyttäjän antama syöte
+    * @return tulos
+    */
     public double sqrt(double number) {
         lastInput = number;
         lastResult = Math.sqrt(number);
         return lastResult;
     }
+    /**
+    * Laskee annetun luvun sinin ja tallettaa tuloksen myöhempää käyttöä varten.
+    * @param number käyttäjän antama syöte
+    * @return tulos
+    */
     public double sin(double number) {
         lastInput = number;
         lastResult = Math.sin(number);
         return lastResult;
     }
+    /**
+    * Laskee annetun luvun cosinin ja tallettaa tuloksen myöhempää käyttöä varten.
+    * @param number käyttäjän antama syöte
+    * @return tulos
+    */
     public double cos(double number) {
         lastInput = number;
         lastResult = Math.cos(number);
         return lastResult;
     }
+    /**
+    * Laskee annetun luvun tangentin ja tallettaa tuloksen myöhempää käyttöä varten.
+    * @param number käyttäjän antama syöte
+    * @return tulos
+    */
     public double tan(double number) {
         lastInput = number;
         lastResult = Math.tan(number);
