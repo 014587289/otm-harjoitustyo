@@ -19,7 +19,44 @@ Sovelluksen tarkoituksena on toimia yksinkertaisena tekstikäyttöliittymällä 
 [Viikko 6](https://github.com/014587289/otm-harjoitustyo/releases/tag/0.3)
 
 
+## Komentorivitoiminnot
 
+### Testaus
+
+Testit voidaan suorittaa komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti voidaan luoda komennolla
+
+```
+mvn jacoco:report
+```
+
+### jarin generointi
+
+Suoritettava jar voidaan luoda komennolla 
+
+```
+mvn package
+```
+
+### JavaDoc
+
+JavaDoc voidaan luoda komennolla
+
+```
+mvn javadoc:javadoc
+```
+
+### Checkstyle
+Checkstyle-raportti voidaan luoda komennolla
+
+```
+mvn jxr:jxr checkstyle:checkstyle
+```
 
 
 
