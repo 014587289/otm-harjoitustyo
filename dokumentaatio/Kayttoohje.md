@@ -10,9 +10,9 @@ Ohjelma ei tarvitse sen suurempia konfigurointeja. Sovelluksen pitäisi pystyä lu
 
 Ohjelma käynnistetään komennolla 
 
-'''
+```
 java -jar CalculatorApp.jar
-'''
+```
 
 ## Sovelluksen käyttö
 
