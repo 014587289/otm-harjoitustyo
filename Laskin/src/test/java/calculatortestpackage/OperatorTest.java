@@ -82,11 +82,6 @@ public class OperatorTest {
         assertEquals(Double.doubleToLongBits(7), Double.doubleToLongBits(operator.multiplication(2, 3.5)));
     }
     @Test
-    public void equalWorks() {
-        operator.sum(3, 4);
-        assertEquals(Double.doubleToLongBits(7), Double.doubleToLongBits(operator.equals()));
-    }
-    @Test
     public void powerWorks() {
         operator.power(3, 2);
         assertEquals(Double.doubleToLongBits(9), Double.doubleToLongBits(operator.getLastResult()));

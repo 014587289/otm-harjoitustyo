@@ -64,4 +64,11 @@
                 <goal>javadoc:javadoc</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-paketointi</actionName>
+            <displayName>paketointi</displayName>
+            <goals>
+                <goal>package</goal>
+            </goals>
+        </action>
     </actions>
