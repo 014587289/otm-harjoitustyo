@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto [CalculatorApp.jar](https://github.com/014587289/otm-harjoitustyo/releases/tag/0.3)
+Lataa tiedosto [Calculator.jar](https://github.com/014587289/otm-harjoitustyo/releases/tag/0.3)
 
 ## Konfigurointi
 
