@@ -27,7 +27,7 @@ Sovellukseen kuuluu myös main-luokka, jonka vastuulla on Calculator-olion luomin
 
 Yksinkertainen sovellusta kuvaava luokkakaavio:
 
-<img src="http://yuml.me/446352b4.png" width="450">
+<img src="https://yuml.me/3ab46a4b.png" width="450">
 
 ## Tietojen pysyväistallennus
 
@@ -40,7 +40,7 @@ Tekstitiedostosta löytyvät laskutoimitukset ovat merkkijonoja, muotoa esimerkiks
 
 Sovelluksen perustoiminnallisuutta kuvaava sekvenssikaavio:
 
-<img src="https://www.websequencediagrams.com/cgi-bin/cdraw?lz=VGl0bGUgQ2FsY3VsYXRvciAtIHN1bW1hbiBsYXNrZW1pbmVuIGFuc2lhIGvDpHl0dMOkZW4KCk1haW4tPgAtCjogY2FsYyA9IG5ldwBDCygpABMXLnN0YXJ0ABwNAHoKLT5PcGVyAFEGb3ByAE8HAAwIABwPU2Nhbm5lcjogc2NuAHkHAAwHABEYZmlyc3RJbnB1dCA9IHNjbi5uZXh0TGluZSgpICgiMyIASBhlY29uZAAfGTUiKQoAgS0Xc3VtKABrCiwAPgspCgCBYggtAIJADjgAMBthbnMsIDEwKTsAghkaLmdldExhc3RSZXN1bHQoADI1OABgBQCBCRgxOAoKCgo&s=napkin" width="450">
+<img src="https://www.websequencediagrams.com/cgi-bin/cdraw?lz=VGl0bGUgQ2FsY3VsYXRvciAtIGxhc2t1dG9pbWl0dXN0ZW4gdGVrZW1pbmVuCgpNYWluLT4AJQo6IGNhbGMgPSBuZXcAOwsoKQATFy5zdGFydAAcDQByCi0-SW5wdXR0ZXI6IGlucABPBwAMCAAcD09wZXIAfAZvcHIAegcADAgAPRl0aGlzLmkAXgcuc2V0ACkJABUFbwBNBykKAFQXZwAnCykKAHsILQCCBA4APggAgU4MAIFPDAAXCQCBbg1TY2FubmVyOiBzY24AgkkHAAwHKACBAg0gLT4AggoJOiBjaG9vc2UAggYGaW9uKCkKAII7CABHC2FzayBmb3IgAIF0BSBmcm9tIHVzZXIKAGwHAIEKE2lvbgBACSAtLT4AhBYLABcMAIEIDwCDCQpzZXRMYXMAglcHaW9uKABOCQCBKyEAg34FAHILPgCBfwgAgSchAIEkBQCENQ0AOg8AgRMNAIRmBSgAhAcFAIJPEQCEUgpkbwCCUgoAJQcAhHEIAIIHEXJlc3VsdCBvZgCCFgwKCg&s=napkin" width="450">
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
