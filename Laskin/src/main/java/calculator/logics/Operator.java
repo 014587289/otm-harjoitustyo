@@ -8,12 +8,33 @@ public class Operator {
     private double lastInput;
     private double lastResult;
     private String lastOperation;
+    private double firstInput;
+    private double secondInput;
     
     public Operator() {
         this.lastInput = 0;
         this.lastResult = 0;
         this.lastOperation = "";
+        this.firstInput = 0;
+        this.secondInput = 0;
         
+        
+    }
+
+    public double getFirstInput() {
+        return firstInput;
+    }
+
+    public void setFirstInput(double firstInput) {
+        this.firstInput = firstInput;
+    }
+
+    public double getSecondInput() {
+        return secondInput;
+    }
+
+    public void setSecondInput(double secondInput) {
+        this.secondInput = secondInput;
     }
 
     public String getLastOperation() {

@@ -2,8 +2,8 @@
 
 ## Rakenne
 
-Ohjelman rakenne on yksinkertainen, koska suurin osa sovelluksen toiminnasta tapahtuu yhdessä tai kahdessa luokassa. Tästä syystä
-sovelluksen pakkausrakenne jakautuu vain testipakkaukseen sekä sovelluslogiikan sisältäviin pakkauksiin.
+Sovelluksen pakkausrakenne jakautuu testipakkauksiin ja sovelluksen toiminnan sisältäviin pakkauksiin, joita on kaksi. Toisessa käsitellään sovellusken käynnistäminen 
+sekä käyttöliittymä, ja toisesta löytyy sovelluslogiikan toteuttavat luokat. Ohjelman rakenne on tästä syystä varsin yksinkertainen.
 
 ## Käyttöliittymä
 
@@ -15,8 +15,13 @@ tai tarkastella laskuhistoriaansa käynnistämättä ohjelmaa uusiksi.
 
 ## Sovelluslogiikka
 
-Sovelluksen tärkeimmät luokat ovat Calculator sekä Operator, joista ensimmäinen on vastuussa sovelluslogiikan sekä käyttöliittymän rakentamisesta.
-Operator-luokka taas vastaa laskutoimitusten suorittamisesta ja tulosten tallettamisesta.
+Sovelluksen tärkeimmät luokat ovat Calculator, Inputter sekä Operator.
+
+Calculator on käyttöliittymäluokka, jota käytetään käyttäjän ohjeistamiseen inputtien antamisessa 
+sekä laskutoimitusten tulosten tulostamiseen.
+
+Inputter ottaa vastaan käyttäjän syöttämät inputit ja varmistaa, että ne ovat oikean tyylisiä. Esimerkiksi lukua pyydettäessä Inputter pitää huolen, ettei käyttäjä syötä 
+merkkijonoja inputtina. Tarkistetut inputit siirretään luokan Operator oliolle, joka suorittaa laskutoimitukset ja antaa käyttöliittymälle tiedon tulostettavista tuloksista.
 
 Sovellukseen kuuluu myös main-luokka, jonka vastuulla on Calculator-olion luominen ja sen käynnistäminen.
 
@@ -41,9 +46,14 @@ Sovelluksen perustoiminnallisuutta kuvaava sekvenssikaavio:
 
 ### Käyttöliittymän eriyttäminen
 
-Käyttöliittymä ja sovelluslogiikka toimivat lähes kokonaan yhden luokan yhden metodin varassa. Myös tietojen pysyväistallennus hoidetaan tämän metodin sisällä.
-Näitä asioita voisi eriyttää omiksi luokikseen.
+Käyttöliittymä sekä syötteiden vastaanotto ja käsittely on eriytetty toisistaan, mutta tiedostoon kirjoittaminen ja sen tarkastelu on edelleen käyttöliittymäluokan vastuulla. 
+Tämän voisi eriyttää käyttöliittymästä selkeämmän sovellusrakenteen takaamiseksi.
 
 ### Tallennus
 
-Koodista löytyy myös jonkin verran toistoa, sillä tiedoston käsittely Javalla on aika vierasta, joten ainoa tapa luoda tiedosto ja käsitellä sitä on varsin kömpelö.
+Koodista löytyy jonkin verran toistoa, sillä tiedoston käsittely Javalla on aika vierasta, joten ainoa tuntemani tapa luoda tiedosto ja käsitellä sitä on varsin kömpelö.
+
+### Toiminnallisuuden laajentaminen
+
+Sovelluksen toiminnallisuus on suppeahko. Jos aikaa jatkokehitykseen olisi, voisi laskimeen lisätä toiminnallisuutta kuten funktioiden tarkastelua, 
+yksinkertaisen koordinaatiston piirtämistä (tekstikäyttöliittymässä) sekä monimutkaisempia laskutoimituksia.

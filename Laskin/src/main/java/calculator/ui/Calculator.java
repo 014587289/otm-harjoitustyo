@@ -1,6 +1,7 @@
 
 package calculator.ui;
 
+import calculator.logics.Inputter;
 import calculator.logics.Operator;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -15,15 +16,14 @@ import java.util.Scanner;
  */
 public class Calculator {
     
-    //private file saveFile;
-    public Scanner scanner;
+    private Scanner scanner;
     public Operator operator;
+    private Inputter inputter;
     
     public Calculator() {
-        //this.saveFile = ...;
+        this.inputter = new Inputter();
         this.scanner = new Scanner(System.in);
         this.operator = new Operator();
-        
     }
 
     public Scanner getScanner() {
@@ -47,13 +47,11 @@ public class Calculator {
     * Metodi käynnistää sovelluksen.
     */
     public void startCalculator() {
-        
+        this.inputter.setOperator(this.operator);
         //Käynnistys
         
         System.out.println("Welcome to Calculator.app!");
         String output = "";
-        double firstInput = 0;
-        double secondInput = 0;
         while (true) {
             System.out.println("What would you like to calculate?");
             System.out.println("1: Basic operations");
@@ -65,69 +63,45 @@ public class Calculator {
             System.out.println("");
             String command = scanner.nextLine();
             
-            
             if (command.equals("1")) {
                 
+                //Choose the operation
                 System.out.println("Enter operation (+, -, /, *)");
+                operator.setLastOperation(inputter.chooseBasicOperation());
                 
-                while (true) {
-                    String operation = scanner.nextLine();
-                    if (!(operation.equals("+")) && !(operation.equals("-")) && !(operation.equals("/")) && !(operation.equals("*"))) {
-                        System.out.println("Unsupported operation, try again.");
-                    } else {
-                        this.operator.setLastOperation(operation);
-                        break;
-                    }
-                }
+                //Choose the first number
                 System.out.println("Enter first number or enter 'ans' to use last result.");
-                String input = scanner.nextLine();
-                if (input.equals("ans")) {
-                    operator.setLastInput(operator.getLastResult());
-                    firstInput = operator.getLastResult();
-                } else {
-                    try {
-                        firstInput = Double.parseDouble(input);
-                        operator.setLastInput(firstInput);
-                      
-                        
-                    } catch (NumberFormatException ex) {
-                        System.out.println("Invalid input, closing calculator");
-                        break;
-                    }
+                if (inputter.chooseFirstInput() == false) {
+                    break;
                 }
-                System.out.println("Enter second number or enter 'ans' to use last result.");
                 
-                input = scanner.nextLine();
-                if (input.equals("ans")) {
-                    operator.setLastInput(operator.getLastResult());
-                    secondInput = operator.getLastResult();
-                } else {
-                    try {
-                        secondInput = Double.parseDouble(input);
-                        operator.setLastInput(secondInput);
-                  
-                        
-                    } catch (NumberFormatException ex) {
-                        System.out.println("Invalid input, closing calculator");
-                        break;
-                    }
+                //Choose the second number
+                System.out.println("Enter second number or enter 'ans' to use last result.");
+                if (inputter.chooseSecondInput() == false) {
+                    break;
                 }
+                
+                Double fir = operator.getFirstInput();
+                Double sec = operator.getSecondInput();
+                
                 if (operator.getLastOperation().equals("+")) {
-                    operator.sum(firstInput, secondInput);
-                    output = firstInput + "+" + secondInput + " = " + operator.getLastResult();
+                    operator.sum(fir, sec);
+                    output = fir + "+" + sec + " = " + operator.getLastResult();
                 }
                 if (operator.getLastOperation().equals("-")) {
-                    operator.substraction(firstInput, secondInput);
-                    output = firstInput + "-" + secondInput + " = " + operator.getLastResult();
+                    operator.substraction(fir, sec);
+                    output = fir + "-" + sec + " = " + operator.getLastResult();
                 }
                 if (operator.getLastOperation().equals("/")) {
-                    operator.division(firstInput, secondInput);
-                    output = firstInput + "/" + secondInput + " = " + operator.getLastResult();
+                    operator.division(fir, sec);
+                    output = fir + "/" + sec + " = " + operator.getLastResult();
                 }
                 if (operator.getLastOperation().equals("*")) {
-                    operator.multiplication(firstInput, secondInput);
-                    output = firstInput + "*" + secondInput + " = " + operator.getLastResult();
+                    operator.multiplication(fir, sec);
+                    output = fir + "*" + sec + " = " + operator.getLastResult();
                 }
+                
+                //Log the calculation into a file
                 System.out.println(output);
                 System.out.println("");
                 try (FileWriter fw = new FileWriter("operations.txt", true);
@@ -143,43 +117,28 @@ public class Calculator {
             
             if (command.equals("2")) {
                 System.out.println("Enter operation (sin, cos, tan)");
+                operator.setLastOperation(inputter.chooseTrigonometricOperation());
                 
-                while (true) {
-                    String operation = scanner.nextLine();
-                    if (!(operation.equals("sin")) && !(operation.equals("cos")) && !(operation.equals("tan"))) {
-                        System.out.println("Unsupported operation, try again.");
-                    } else {
-                        this.operator.setLastOperation(operation);
-                        break;
-                    }
-                }
                 System.out.println("Enter a number or enter 'ans' to use last result.");
-                String input = scanner.nextLine();
-                if (input.equals("ans")) {
-                    operator.setLastInput(operator.getLastResult());
-                    firstInput = operator.getLastResult();
-                } else {
-                    try {
-                        firstInput = Double.parseDouble(input);
-                        operator.setLastInput(firstInput);
-                          
-                    } catch (NumberFormatException ex) {
-                        System.out.println("Invalid input, closing calculator");
-                        break;
-                    }
+                if (inputter.chooseFirstInput() == false) {
+                    break;
                 }
+                
+                Double fir = operator.getFirstInput();
+                
                 if (operator.getLastOperation().equals("sin")) {
-                    operator.sin(firstInput);
-                    output = "sin(" + firstInput + ") = " +  operator.getLastResult();
+                    operator.sin(fir);
+                    output = "sin(" + fir + ") = " +  operator.getLastResult();
                 }
                 if (operator.getLastOperation().equals("cos")) {
-                    operator.cos(firstInput);
-                    output = "cos(" + firstInput + ") = " +  operator.getLastResult();
+                    operator.cos(fir);
+                    output = "cos(" + fir + ") = " +  operator.getLastResult();
                 }
                 if (operator.getLastOperation().equals("tan")) {
-                    operator.tan(firstInput);
-                    output = "tan(" + firstInput + ") = " +  operator.getLastResult();
+                    operator.tan(fir);
+                    output = "tan(" + fir + ") = " +  operator.getLastResult();
                 }
+                
                 System.out.println(output);
                 System.out.println("");
                 try (FileWriter fw = new FileWriter("operations.txt", true);
@@ -195,42 +154,23 @@ public class Calculator {
             if (command.equals("3")) {
 
                 System.out.println("Enter a number you'd like to raise to a power, or enter 'ans' to use last result.");
-                String input = scanner.nextLine();
-                if (input.equals("ans")) {
-                    operator.setLastInput(operator.getLastResult());
-                    firstInput = operator.getLastResult();
-                } else {
-                    try {
-                        firstInput = Double.parseDouble(input);
-                        operator.setLastInput(firstInput);
-                      
-                        
-                    } catch (NumberFormatException ex) {
-                        System.out.println("Invalid input, closing calculator");
-                        break;
-                    }
+                if (inputter.chooseSecondInput() == false) {
+                    break;
                 }
                 System.out.println("Enter the power you would like your last input to be raised to, or enter 'ans' to use last result as the power.");
                 
-                input = scanner.nextLine();
-                if (input.equals("ans")) {
-                    operator.setLastInput(operator.getLastResult());
-                    secondInput = operator.getLastResult();
-                } else {
-                    try {
-                        secondInput = Double.parseDouble(input);
-                        operator.setLastInput(secondInput);
-                  
-                        
-                    } catch (NumberFormatException ex) {
-                        System.out.println("Invalid input, closing calculator");
-                        break;
-                    }
+                if (inputter.chooseSecondInput() == false) {
+                    break;
                 }
-                operator.power(firstInput, secondInput);
-                output = firstInput + " to the power of " + secondInput + " = " + operator.getLastResult();
+                
+                Double fir = operator.getFirstInput();
+                Double sec = operator.getSecondInput();
+                
+                operator.power(fir, sec);
+                output = fir + " to the power of " + sec + " = " + operator.getLastResult();
                 System.out.println(output);
                 System.out.println("");
+                
                 try (FileWriter fw = new FileWriter("operations.txt", true);
                 BufferedWriter bw = new BufferedWriter(fw);
                 PrintWriter out = new PrintWriter(bw)) {

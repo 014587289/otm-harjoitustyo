@@ -8,16 +8,13 @@ Harjoitustyön sovelluksena on laskin, jolla käyttäjä voi tehdä perinteisest
 
 * Yhteen-, vähennys-, kerto- ja jakolaskut
 * Trigonometriset funktiot
-* Neliöjuuret ja potenssit
+* Potenssitpotenssit
 * Tehtyjen laskutoimitusten tallennus tiedostoon
 * Laskutoimitushistorian lukeminen ja tyhjennys
+* Sovellus muistaa edellisen laskutoimituksen vastauksen (ans-toiminto)
 
 **Käyttöliittymä**
 
-Tekstikäyttöliittymä, jossa valitaan operaatio ja tarvittavat luvut.
+Tekstikäyttöliittymä, joka opastaa käyttäjää antamaan oikeanlaisia inputteja, joiden avulla käyttöliittymässä edetään. 
+Esimerkiksi haluttu laskutoimitus ja siihen liittyvät luvut syötetään inputtina sovellukselle.
 
-**Jatkokehitysideoita**
-
-* Tehtyjen laskutoimitusten tallennus tietokantaan
-* Graafisen laskimen ominaisuuksia
-* Pitempien laskujen mahdollistaminen

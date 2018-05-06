@@ -10,7 +10,7 @@
 | 11.4. |  2h   | Testikattavuutta lisätty |
 | 23.4. |  4h   | Paketointi korjattu, README muokattu, plugini lisätty, lisätty toiminnallisuutta (tiedoston kirjoitus) |
 | 30.4. |  4h   | Toiminnallisuutta laajennettu, javadoc aloitettu, paketoinnin ja joidenkin muuttujien nimiä siistitty |
-|YHTEENSÄ|  24h |  |
-|  	|     	|  |
+| 6.5.	|  4h   | Sovelluksen rakenne muutettu, Inputter-luokka lisätty, testejä lisätty, Käyttöliittymää eriytetty	|
+|YHTEENSÄ| 28h  |  |
 |   	|     	|  |
 |   	|     	|  | 

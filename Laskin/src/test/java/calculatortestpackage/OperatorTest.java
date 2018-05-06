@@ -69,6 +69,18 @@ public class OperatorTest {
         assertEquals(Double.doubleToLongBits(4), Double.doubleToLongBits(operator.getLastInput()));
     }
     
+    
+    @Test
+    public void setGetInputsWork() {
+        operator.setFirstInput(3);
+        operator.setSecondInput(1);
+        assertEquals(Double.doubleToLongBits(3), Double.doubleToLongBits(operator.getFirstInput()));
+        assertEquals(Double.doubleToLongBits(1), Double.doubleToLongBits(operator.getSecondInput()));
+    }
+    @Test
+    public void sumWorks() {
+        assertEquals(Double.doubleToLongBits(0), Double.doubleToLongBits(operator.sum(-3, 3)));
+    }
     @Test
     public void substractionWorks() {
         assertEquals(Double.doubleToLongBits(7), Double.doubleToLongBits(operator.substraction(10, 3)));

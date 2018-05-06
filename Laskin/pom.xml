@@ -27,6 +27,7 @@
             <configuration>
                 <excludes>
                     <exclude>calculator/ui/*</exclude>
+                    <exclude>calculator/logics/Inputter.class</exclude>
                 </excludes>
             </configuration>
             <executions>
