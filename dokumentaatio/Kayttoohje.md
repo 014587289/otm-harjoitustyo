@@ -8,10 +8,10 @@ Ohjelma ei tarvitse sen suurempia konfigurointeja. Sovelluksen pitäisi pystyä lu
 
 ## Ohjelman käynnistys
 
-Ohjelma käynnistetään komennolla 
+Ohjelma käynnistetään navigoimalla terminaalissa hakemistoon, jossa Calculator.jar sijaitsee ja antamalla komento
 
 ```
-java -jar CalculatorApp.jar
+java -jar Calculator.jar
 ```
 
 ## Sovelluksen käyttö
