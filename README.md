@@ -18,6 +18,7 @@ Sovelluksen tarkoituksena on toimia yksinkertaisena tekstikäyttöliittymällä 
 
 [Viikko 6](https://github.com/014587289/otm-harjoitustyo/releases/tag/0.3)
 
+[Loppupalautus](https://github.com/014587289/otm-harjoitustyo/releases/tag/1.0)
 
 ## Komentorivitoiminnot
 
